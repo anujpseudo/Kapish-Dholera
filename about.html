@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="navy-gold">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn about Aurelia Landmark, our approach to thoughtful real estate development in Dholera, and the values behind our work." />
+
+  <title>About Us | Kapish Dholera</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+/* ==========================================================================
+   KAPISH DHOLERA — STYLESHEET
+   Supports 3 Switchable Palettes: navy-gold (Default), emerald-champagne, obsidian-amber
+   ========================================================================== */
+
+:root,
+[data-theme="emerald-champagne"] {
+  --bg-dark: #061f1a;
+  --bg-dark-alt: #0b2b24;
+  --bg-surface-dark: rgba(255, 255, 255, 0.05);
+  --border-dark: rgba(255, 255, 255, 0.13);
+  --bg-light: #ffffff;
+  --bg-tinted: #f4f9f7;
+  --text-dark: #0c241e;
+  --text-muted: #4b635c;
+  --text-light: #f8faf9;
+  --text-muted-light: #cbd8d4;
+  --accent: #dfc17d;
+  --accent-hover: #ebd094;
+  --accent-dark: #8c6d27;
+  --accent-soft: rgba(223, 193, 125, 0.16);
+  --hero-grad: linear-gradient(180deg, rgba(6, 31, 26, 0.74) 0%, rgba(6, 31, 26, 0.58) 55%, rgba(6, 31, 26, 0.94) 100%);
+}
+
+/* Base Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, .serif-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Top Announcement Bar */
+.top-bar {
+  background-color: var(--bg-dark);
+  color: var(--text-muted-light);
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--border-dark);
+  padding: 0.5rem 0;
+}
+
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.top-bar-badge {
+  background: var(--accent-soft);
+  color: #ffffff;
+  border: 1px solid var(--accent);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}
+
+.top-bar-link {
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.top-bar-link:hover {
+  text-decoration: underline;
+}
+
+/* Header & Navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  transition: box-shadow 0.25s ease;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 10px 30px rgba(7, 18, 36, 0.08);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  gap: 1rem;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.brand-emblem {
+  width: auto;
+  height: 50px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dark);
+}
+
+.brand-sub {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent-dark);
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.nav-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  position: relative;
+  padding: 0.35rem 0;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent-dark);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Theme Palette Switcher */
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.5rem;
+  background: var(--bg-tinted);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 999px;
+}
+
+.theme-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease;
+}ary
+
+.theme-dot:hover,
+.theme-dot.active {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.theme-dot[data-set-theme="navy-gold"] {
+  background: linear-gradient(135deg, #071224 50%, #d4af37 50%);
+}
+
+.theme-dot[data-set-theme="emerald-champagne"] {
+  background: linear-gradient(135deg, #061f1a 50%, #dfc17d 50%);
+}
+
+.theme-dot[data-set-theme="obsidian-amber"] {
+  background: linear-gradient(135deg, #111216 50%, #e59a3c 50%);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  text-align: center;
+}
+
+.btn-sm {
+  padding: 0.55rem 1.05rem;
+  font-size: 0.84rem;
+}
+
+.btn-lg {
+  padding: 0.8rem 1.75rem;
+  font-size: 0.95rem;
+}
+
+.btn-block {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: #091322;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.26);
+  padding: 0.5rem 1.25rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+}
+
+.btn-outline-dark {
+  background: transparent;
+  color: var(--text-dark);
+  border-color: rgba(13, 27, 42, 0.24);
+  padding: 0.25rem 0.5rem;
+}
+
+.btn-outline-dark:hover {
+  border-color: var(--text-dark);
+  background: rgba(13, 27, 42, 0.04);
+}
+
+/* Mobile Hamburger & Drawer */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  background: var(--bg-tinted);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 8px;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text-dark);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.mobile-drawer {
+  display: none;
+  background: #ffffff;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 1.25rem;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+}
+
+.mobile-drawer.open {
+  display: block;
+}
+
+.mobile-drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.mobile-link {
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 86vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--text-light);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--hero-grad);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 860px;
+  padding-top: 5.5rem;
+  padding-bottom: 4rem;
+}
+
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.35rem;
+}
+
+.eyebrow-glass {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.25);
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 5vw, 3.85rem);
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  color: #ffffff;
+}
+
+.accent-text {
+  color: var(--accent);
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.accent-text-dark {
+  color: var(--accent-dark);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  color: var(--text-muted-light);
+  max-width: 680px;
+  margin: 0 auto 2rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* 6-Metric Hero Strip */
+.hero-metrics-bar {
+  position: relative;
+  z-index: 1;
+  background: rgba(7, 18, 36, 0.82);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-dark);
+  padding: 1.35rem 0;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-dark);
+  padding: 0 0.5rem;
+}
+
+.metric-item:last-child {
+  border-right: none;
+}
+
+.metric-value {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.15;
+}
+
+.metric-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted-light);
+  margin-top: 0.2rem;
+}
+
+/* General Sections */
+.section {
+  padding: 5.5rem 0;
+}
+
+.section-light {
+  background-color: var(--bg-light);
+}
+
+.section-tinted {
+  background-color: var(--bg-tinted);
+}
+
+.section-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.section-dark-alt {
+  background-color: var(--bg-dark-alt);
+  color: var(--text-light);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-muted-light {
+  color: var(--text-muted-light);
+}
+
+.section-header {
+  max-width: 720px;
+  margin: 0 auto 3.25rem;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  padding: 0.32rem 0.85rem;
+  border: 1px solid #061f1a;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+
+.eyebrow-light {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 3.6vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.section-subtitle {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+}
+
+/* About Section */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.about-image-frame {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(7, 18, 36, 0.14);
+}
+
+.about-image-frame img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+}
+
+.floating-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  background: var(--bg-dark);
+  color: #ffffff;
+  padding: 0.85rem 1.25rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.floating-badge strong {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  color: var(--accent);
+}
+
+.floating-badge span {
+  font-size: 0.78rem;
+  color: var(--text-muted-light);
+}
+
+.section-lead {
+  font-size: 1.06rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.85rem;
+}
+
+.section-body {
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.about-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mini-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  background: var(--bg-tinted);
+  border-radius: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.mini-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.mini-feature h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.mini-feature p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.about-actions {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+/* Grids */
+.cards-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.cards-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Dark Offerings Cards */
+.dark-card {
+  background: var(--bg-surface-dark);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.dark-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.featured-dark-card {
+  border-color: rgba(212, 175, 55, 0.45);
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.09) 0%, rgba(255, 255, 255, 0.04) 100%);
+}
+
+.dark-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.card-pill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.pill-gold {
+  background: var(--accent);
+  color: #091322;
+}
+
+.card-price-tag {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.92rem;
+}
+
+.dark-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.dark-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted-light);
+  margin-bottom: 1.25rem;
+}
+
+.card-specs {
+  list-style: none;
+  border-top: 1px solid var(--border-dark);
+  padding-top: 1rem;
+  margin-bottom: 1.5rem;
+  margin-top: auto;
+}
+
+.card-specs li {
+  font-size: 0.85rem;
+  color: var(--text-muted-light);
+  padding: 0.25rem 0;
+}
+
+.card-specs li::before {
+  content: '• ';
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.card-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  cursor: pointer;
+  text-align: left;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+.section-cta-center {
+  text-align: center;
+  margin-top: 2.75rem;
+}
+
+/* Why Invest Cards */
+.light-feature-card {
+  background: var(--bg-tinted);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  padding: 1.65rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: center;
+}
+
+.light-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(7, 18, 36, 0.07);
+}
+
+.mini-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  padding: 0.22rem 0.65rem;
+  border-radius: 6px;
+  margin-bottom: 0.85rem;
+}
+
+.light-feature-card h3 {
+  font-size: 1.12rem;
+  margin-bottom: 0.6rem;
+}
+
+.light-feature-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* Interactive ROI Calculator */
+.roi-calculator-box {
+  margin-top: 3.25rem;
+  background: var(--bg-dark);
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 2.25rem;
+  border: 1px solid var(--border-dark);
+  box-shadow: 0 22px 45px rgba(7, 18, 36, 0.14);
+}
+
+.roi-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.roi-header .section-eyebrow {
+  color: var(--accent);
+}
+
+.roi-header h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.55rem;
+}
+
+.roi-disclaimer {
+  font-size: 0.78rem;
+  color: var(--text-muted-light);
+}
+
+.roi-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+.control-group {
+  margin-bottom: 1.35rem;
+}
+
+.control-group label {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-muted-light);
+  margin-bottom: 0.45rem;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label-row strong {
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.72rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.92rem;
+}
+
+.form-select option {
+  background: #0d1b2a;
+  color: #ffffff;
+}
+
+.range-slider {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.range-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  color: var(--text-muted-light);
+  margin-top: 0.25rem;
+}
+
+.horizon-pills {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+}
+
+.horizon-btn {
+  padding: 0.55rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-dark);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.horizon-btn.active,
+.horizon-btn:hover {
+  background: var(--accent);
+  color: #091322;
+  border-color: var(--accent);
+}
+
+.roi-results {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-dark);
+  border-radius: 14px;
+  padding: 1.65rem;
+}
+
+.roi-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-dark);
+  font-size: 0.92rem;
+}
+
+.roi-stat-row strong {
+  font-size: 1.15rem;
+}
+
+.highlight-gold {
+  color: var(--accent);
+  font-size: 1.35rem !important;
+}
+
+.total-row {
+  border-bottom: none;
+  margin-bottom: 1rem;
+}
+
+.gain-badge {
+  background: rgba(34, 197, 94, 0.16);
+  color: #4ade80;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.95rem !important;
+}
+
+/* Townships & Filter Bar */
+.filter-bar {
+  display: inline-flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  background: #ffffff;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--bg-dark);
+  color: var(--accent);
+  border-color: var(--bg-dark);
+}
+
+.project-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 12px 28px rgba(7, 18, 36, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(7, 18, 36, 0.1);
+}
+
+.project-card.hidden-card {
+  display: none;
+}
+
+.project-img-wrap {
+  position: relative;
+  height: 215px;
+  overflow: hidden;
+}
+
+.project-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img-wrap img {
+  transform: scale(1.05);
+}
+
+.status-badge {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.72rem;
+  border-radius: 6px;
+}
+
+.badge-green {
+  background: #15803d;
+  color: #ffffff;
+}
+
+.badge-gold {
+  background: var(--accent);
+  color: #091322;
+}
+
+.badge-blue {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+.project-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  margin-bottom: 0.45rem;
+}
+
+.project-body h3 {
+  font-size: 1.28rem;
+  margin-bottom: 0.55rem;
+}
+
+.project-body p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 1.15rem;
+}
+
+.project-specs-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  background: var(--bg-tinted);
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  margin-top: auto;
+  margin-bottom: 1.15rem;
+}
+
+.project-specs-box small {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.project-specs-box strong {
+  font-size: 0.92rem;
+  color: var(--text-dark);
+}
+
+.project-actions {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 0.65rem;
+}
+
+/* 3D Walkthrough Section */
+.walkthrough-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-dark);
+  box-shadow: 0 28px 55px rgba(0, 0, 0, 0.35);
+}
+
+.walkthrough-img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+}
+
+.walkthrough-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 18, 36, 0.42);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.play-trigger {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #091322;
+  border: none;
+  font-size: 1.65rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 12px rgba(212, 175, 55, 0.25);
+  transition: transform 0.25s ease;
+}
+
+.play-trigger:hover {
+  transform: scale(1.1);
+}
+
+.walkthrough-caption {
+  font-weight: 700;
+  font-size: 0.95rem;
+  background: rgba(7, 18, 36, 0.78);
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-dark);
+}
+
+.hotspot-bar {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.hotspot-chip {
+  background: rgba(7, 18, 36, 0.84);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid var(--border-dark);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* Blog Cards */
+.blog-card {
+  background: var(--bg-surface-dark);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-img-wrap {
+  position: relative;
+  height: 195px;
+}
+
+.blog-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-date {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  background: rgba(7, 18, 36, 0.85);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+}
+
+.blog-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-body h3 {
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin-bottom: 0.65rem;
+}
+
+.blog-body p {
+  font-size: 0.88rem;
+  color: var(--text-muted-light);
+  margin-bottom: 1.25rem;
+  margin-top: auto;
+}
+
+/* CTA Banner Section */
+.cta-banner-section {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-alt) 100%);
+  color: #ffffff;
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.trust-pills-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1.75rem 0 2.25rem;
+}
+
+.trust-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-dark);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Testimonials */
+.testimonial-card {
+  background: var(--bg-tinted);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.stars {
+  color: #eab308;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.quote-text {
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.author-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  padding-top: 0.9rem;
+}
+
+.avatar-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.author-row strong {
+  display: block;
+  font-size: 0.88rem;
+}
+
+.author-row span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--bg-dark);
+  color: var(--text-muted-light);
+  padding: 4rem 0 2rem;
+}
+
+.newsletter-box {
+  background: var(--bg-surface-dark);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+.newsletter-copy h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #ffffff;
+  font-size: 1.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.newsletter-copy p {
+  font-size: 0.88rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.6rem;
+  flex: 1;
+  max-width: 440px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-dark);
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  font-family: inherit;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.9fr 0.95fr 1.15fr;
+  gap: 2.25rem;
+  padding-bottom: 2.75rem;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.footer-col--first {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 1rem 1rem 1rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.footer-logo .brand-name {
+  color: #ffffff;
+  padding: 1rem;
+}
+
+.footer-logo .brand-sub {
+  color: var(--accent);
+}
+
+.footer-desc {
+  margin-top: 1rem;
+  font-size: 0.86rem;
+  color: black;
+  text-align: justify;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 0.98rem;
+  margin-bottom: 1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 0.55rem;
+  font-size: 0.86rem;
+}
+
+.footer-col a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+/* Floating Concierge Button */
+.floating-concierge {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 950;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--bg-dark);
+  color: #ffffff;
+  border: 1px solid var(--accent);
+  padding: 0.72rem 1.15rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.84rem;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.concierge-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+/* Modals */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: rgba(7, 18, 36, 0.78);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-backdrop.open {
+  display: flex;
+}
+
+.modal-dialog {
+  position: relative;
+  background: #ffffff;
+  color: var(--text-dark);
+  width: 100%;
+  max-width: 480px;
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
+}
+
+.modal-dialog-lg {
+  max-width: 780px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  background: var(--bg-tinted);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-dialog h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.55rem;
+  margin-bottom: 0.45rem;
+}
+
+.modal-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 1.35rem;
+}
+
+.modal-form .form-row {
+  margin-bottom: 1rem;
+}
+
+.modal-form label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.modal-form input,
+.modal-form .form-select {
+  width: 100%;
+  padding: 0.72rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  background: #ffffff;
+  color: var(--text-dark);
+  font-family: inherit;
+  font-size: 0.92rem;
+}
+
+.proj-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.proj-modal-img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.proj-modal-info .status-badge {
+  position: static;
+  display: inline-block;
+  margin-bottom: 0.6rem;
+}
+
+.proj-modal-loc {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-bottom: 0.65rem;
+}
+
+.proj-modal-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.wt-viewer-box img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+}
+
+.wt-legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  background: var(--bg-tinted);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: flex;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1.25rem;
+  }
+  .metric-item:nth-child(3) {
+    border-right: none;
+  }
+  .about-grid,
+  .roi-grid,
+  .proj-modal-grid {
+    grid-template-columns: 1fr;
+  }
+  .cards-grid-3,
+  .cards-grid-4,
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .top-bar-inner {
+    justify-content: center;
+    text-align: center;
+  }
+  .nav-actions .btn-sm {
+    display: none;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .metric-item:nth-child(even) {
+    border-right: none;
+  }
+  .cards-grid-3,
+  .cards-grid-4,
+  .footer-grid,
+  .about-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-image-frame img,
+  .walkthrough-img {
+    height: 300px;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    max-width: 100%;
+  }
+}
+
+
+/* About page layout */
+.about-page { --about-blue:#3478f6; --about-cyan:#56c8ee; }
+.about-page .top-bar { padding:.35rem 0; } .about-page .top-bar p { margin:0; }
+.about-page .brand-emblem { max-height:58px; width:auto; object-fit:contain; }
+.about-page .nav-link.active { color:var(--accent-dark); }
+.about-hero { min-height:510px; display:grid; place-items:center; position:relative; isolation:isolate; overflow:hidden; color:#fff; background:#0a1932 url('images/hero-skyline.jpg') center 48%/cover no-repeat; }
+.about-hero::before { content:""; position:absolute; z-index:-1; inset:0; background:linear-gradient(90deg,rgba(4,12,29,.83),rgba(8,24,52,.62) 52%,rgba(5,15,35,.7)),linear-gradient(0deg,rgba(3,9,22,.83),transparent 70%); }
+.about-hero-content { max-width:900px; padding:4.5rem 1.25rem; text-align:center; }
+.about-kicker { display:inline-flex; align-items:center; gap:.55rem; color:#b7d7ff; font-size:.77rem; font-weight:700; padding:.48rem .9rem; border-radius:99px; background:rgba(45,113,224,.2); border:1px solid rgba(117,166,255,.35); }
+.about-hero h1,.about-bottom-cta h2 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(2.7rem,6.5vw,5.1rem); line-height:1.08; margin:1.15rem 0 .55rem; color:#fff; letter-spacing:-.04em; }
+.about-hero h1 span,.about-bottom-cta h2 span { background:linear-gradient(100deg,#57a7ff,#73d4ed); background-clip:text; -webkit-background-clip:text; color:transparent; }
+.about-rule { width:68px; height:4px; border-radius:4px; background:linear-gradient(90deg,#3478f6,#35c2e8); margin:1rem 0 1.35rem; }
+.about-hero .about-rule { margin:1.1rem auto 1.35rem; }
+.about-hero-content>p { max-width:690px; margin:0 auto; color:#d3dced; font-size:1.08rem; }
+.about-hero-actions { display:flex; justify-content:center; gap:.85rem; flex-wrap:wrap; margin-top:1.7rem; }
+.about-hero-actions .btn,.about-bottom-cta .btn { display:inline-flex; align-items:center; gap:.55rem; }
+.about-story { padding-top:6.4rem; padding-bottom:6.4rem; }
+.about-story-grid { display:grid; grid-template-columns:1.02fr 1fr; gap:4rem; align-items:center; }
+.about-story-visual { position:relative; min-height:430px; border-radius:20px; overflow:hidden; box-shadow:0 24px 58px #08183033; background:#0c1a31; }
+.about-story-visual::after { content:""; position:absolute; inset:40% 0 0; background:linear-gradient(transparent,rgba(4,11,25,.84)); }
+.about-story-visual>img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.story-visual-badge { position:absolute; z-index:1; right:1rem; top:1rem; background:#fffffff2; color:#11213c; border-radius:11px; padding:.68rem .85rem; font-size:.8rem; font-weight:700; }
+.story-visual-badge i { color:#12a878; margin-right:.3rem; }
+.story-image-caption { position:absolute; z-index:1; left:1.25rem; bottom:1.35rem; display:grid; gap:.35rem; color:#fff; }
+.story-image-caption span { color:#9dc6ff; font-size:.7rem; font-weight:800; letter-spacing:.08em; }
+.story-image-caption strong { font:700 1.25rem 'Playfair Display',Georgia,serif; }
+.about-story-copy .section-title { max-width:600px; margin:.6rem 0 .25rem; font-size:clamp(2rem,3.5vw,3rem); line-height:1.12; }
+.about-story-copy>.section-body { color:var(--text-muted); margin:.8rem 0; font-size:.96rem; }
+.about-offerings { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem; margin:1.35rem 0; }
+.about-offering { display:flex; align-items:center; gap:.7rem; min-height:74px; padding:.7rem; border:1px solid rgba(30,64,110,.1); border-radius:13px; background:rgba(255,255,255,.72); }
+.about-offering-icon { width:38px; height:38px; border-radius:10px; display:grid; place-items:center; flex:none; }
+.about-offering-icon.blue { color:#2874ec; background:#e4efff; }.about-offering-icon.green { color:#0b9c71; background:#dcfaed; }.about-offering-icon.violet { color:#a144d4; background:#f5e8ff; }.about-offering-icon.amber { color:#d88a09; background:#fff3cd; }
+.about-offering h3 { font:700 .86rem 'Playfair Display',Georgia,serif; margin:0 0 .12rem; }.about-offering p { color:var(--text-muted); font-size:.7rem; line-height:1.35; margin:0; }
+.about-stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:.55rem; padding-top:.5rem; }.about-stat-row>div { padding:.75rem; border-radius:12px; background:#eaf2ff; display:grid; }.about-stat-row>div:nth-child(2) { background:#e2f8ee; }.about-stat-row>div:nth-child(3) { background:#fff5df; }
+.about-stat-row strong { color:#2367dc; font-size:1.22rem; }.about-stat-row>div:nth-child(2) strong { color:#05855e; }.about-stat-row>div:nth-child(3) strong { color:#bf7600; }.about-stat-row span { color:var(--text-muted); font-size:.68rem; }
+.about-media-section { background:radial-gradient(ellipse at 78% 90%,rgba(0,157,196,.12),transparent 38%),var(--bg-dark); padding:5.3rem 0 5.8rem; }.about-media-section .section-header,.about-foundation .section-header { margin-bottom:2.4rem; }
+.about-media-frame { position:relative; max-width:900px; aspect-ratio:16/8.7; overflow:hidden; margin:0 auto; border:1px solid rgba(255,255,255,.15); border-radius:22px; box-shadow:0 24px 55px #0005; background:#071224; }
+.about-media-frame::after { content:""; position:absolute; inset:40% 0 0; background:linear-gradient(transparent,rgba(3,9,21,.82)); }.about-media-frame>img { width:100%; height:100%; object-fit:cover; }
+.about-media-frame figcaption { position:absolute; z-index:1; left:1.2rem; bottom:1.2rem; color:#fff; display:flex; align-items:center; gap:.8rem; }.about-media-frame figcaption>span { color:#fff; font-size:2.8rem; }.about-media-frame figcaption div { display:grid; }.about-media-frame figcaption small { color:#c8d2e3; }
+.about-foundation { padding:5.4rem 0 6rem; background:radial-gradient(ellipse at 8% 20%,rgba(50,90,187,.15),transparent 35%),#0b1730; border-top:1px solid #ffffff0f; }
+.about-foundation-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.35rem; max-width:900px; margin:0 auto; }
+.about-foundation-card { padding:2rem; border-radius:19px; background:rgba(255,255,255,.065); border:1px solid rgba(166,193,237,.13); box-shadow:0 14px 28px #0002; color:#fff; }
+.foundation-icon { width:48px; height:48px; display:inline-grid; place-items:center; background:rgba(47,119,238,.19); color:#58a5ff; border:1px solid rgba(72,140,255,.25); border-radius:13px; font-size:1.2rem; vertical-align:middle; }.foundation-icon.green { color:#17c996; background:rgba(10,186,131,.14); }
+.about-foundation-card h3 { display:inline-block; margin:0 0 0 1rem; font:700 1.35rem 'Playfair Display',Georgia,serif; vertical-align:middle; }.about-foundation-card .about-rule { margin:.95rem 0 1.2rem; }.about-foundation-card p { color:#b8c4d6; font-size:.9rem; margin:.75rem 0; }.about-foundation-card .green-rule { background:#0fc48e; }
+.about-values { padding:5.2rem 0 5.7rem; }.about-values .section-header,.about-team .section-header { margin-bottom:2.2rem; }.about-values-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; }
+.about-value-card { min-height:230px; display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.4rem 1.1rem; border-radius:18px; background:#f8fafc; border:1px solid #e5ebf3; }
+.value-icon { width:48px; height:48px; display:grid; place-items:center; border:1px solid #e4eaf3; border-radius:13px; color:#3478f6; background:#fff; font-size:1.2rem; }.value-tag { font-size:.62rem; font-weight:800; padding:.22rem .62rem; border-radius:99px; margin:.85rem 0 .5rem; }.blue-tag { color:#2868dc; background:#e0ecff; }.green-tag { color:#0a936a; background:#d8f8e9; }.violet-tag { color:#963bc4; background:#f3e2ff; }.amber-tag { color:#b77600; background:#fff0c2; }
+.about-value-card h3 { font:700 1.08rem 'Playfair Display',Georgia,serif; margin:0 0 .4rem; }.about-value-card p { font-size:.8rem; color:var(--text-muted); margin:0; }
+.about-team { padding:5.2rem 0 5.4rem; }.about-team-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.2rem; max-width:940px; margin:0 auto; }.about-team-card { overflow:hidden; border-radius:18px; border:1px solid rgba(24,47,80,.1); background:#fff; box-shadow:0 8px 26px rgba(20,39,69,.07); }
+.team-photo { height:280px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.7rem; color:#ffffffe0; background:linear-gradient(145deg,#294467,#a9b9ca); }.team-photo-two { background:linear-gradient(145deg,#314a5b,#c4b9aa); }.team-photo-three { background:linear-gradient(145deg,#243450,#a9b6bb); }.team-photo i { font-size:3.5rem; opacity:.78; }.team-photo span { font-size:.62rem; font-weight:800; letter-spacing:.08em; }
+.team-card-copy { padding:1.15rem 1.25rem 1.35rem; text-align:center; }.team-card-copy>span { color:#3075e9; font-size:.63rem; font-weight:800; }.team-card-copy h3 { font:700 1.1rem 'Playfair Display',Georgia,serif; margin:.35rem 0; }.team-card-copy p { color:var(--text-muted); font-size:.78rem; margin:0; }
+.about-team .section-cta-center { margin-top:1.8rem; }.about-disclaimer { padding:4.2rem 0; }
+.disclaimer-card { max-width:880px; margin:0 auto; padding:1.7rem; display:grid; grid-template-columns:auto 1fr; gap:1rem; background:#f7f9fc; border:1px solid #e4eaf2; border-radius:18px; box-shadow:0 8px 22px #1227470d; }
+.disclaimer-icon { width:46px; height:46px; display:grid; place-items:center; color:#dc8a00; background:#fff2cc; border-radius:12px; font-size:1.1rem; }.disclaimer-card h2 { font:700 1.35rem 'Playfair Display',Georgia,serif; margin:0; }.disclaimer-card .about-rule { margin:.7rem 0 1rem; background:#f0a500; }.disclaimer-card p { color:var(--text-muted); font-size:.84rem; margin:.5rem 0; }
+.about-bottom-cta { color:#fff; padding:4.5rem 0 5rem; background:radial-gradient(ellipse at 50% 110%,rgba(33,117,238,.3),transparent 60%),linear-gradient(120deg,#101d39,#101941); border-top:1px solid #ffffff12; }.about-bottom-cta h2 { font-size:clamp(2rem,4vw,3.6rem); margin:.9rem auto .7rem; }.about-bottom-cta p { color:#c4cede; margin:0 auto 1.3rem; max-width:620px; }
+.about-footer-banner { padding:1.3rem 1.5rem; margin-bottom:2.6rem; border-radius:18px; background:linear-gradient(105deg,rgba(37,86,180,.35),rgba(101,52,160,.2)); border:1px solid rgba(119,154,232,.2); display:flex; justify-content:space-between; align-items:center; gap:1rem; }.about-footer-banner>div { display:grid; }.about-footer-banner strong { color:#fff; font:700 1.15rem 'Playfair Display',Georgia,serif; }.about-footer-banner span { color:var(--text-muted-light); font-size:.82rem; }
+.about-page .footer-col--first { background:transparent; box-shadow:none; padding:0; justify-content:flex-start; }.about-page .footer-desc { color:var(--text-muted-light); text-align:left; }.about-page .footer-logo .brand-name { padding:0; }.about-page .brand-name span { color:var(--accent); }.about-floating-link { text-decoration:none; }.about-floating-link i { color:#50c99b; }
+@media(max-width:1024px) { .about-story-grid { gap:2rem; }.about-values-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.about-team-grid { max-width:760px; }.team-photo { height:250px; } }
+@media(max-width:640px) {
+ .about-page .top-bar-link { display:none; }.about-page .top-bar-inner { gap:.2rem .6rem; }.about-page .top-bar-inner p { font-size:.69rem; }.about-page .nav-container { height:64px; }.about-page .brand-emblem { max-height:48px; }.about-page .about-header-cta { display:none; }
+ .about-hero { min-height:470px; background-position:56% center; }.about-hero-content { padding:4rem 1.25rem; }.about-hero h1 { font-size:2.8rem; }.about-hero-content>p { font-size:.94rem; }.about-hero-actions { display:grid; gap:.55rem; }.about-hero-actions .btn { justify-content:center; width:100%; }
+ .about-story { padding:2.4rem 0 3rem; }.about-story-grid { grid-template-columns:1fr; gap:1.65rem; }.about-story-visual { min-height:290px; }.about-story-copy .section-title { font-size:2rem; }.about-story-copy>.section-body { font-size:.88rem; }.about-offerings { grid-template-columns:1fr; gap:.55rem; }.about-offering { min-height:67px; }.about-stat-row { grid-template-columns:repeat(2,1fr); }.about-stat-row>div:last-child { grid-column:1/-1; }
+ .about-media-section,.about-foundation { padding:3.5rem 0 3.7rem; }.about-media-frame { aspect-ratio:4/3; border-radius:16px; }.about-media-frame figcaption small { font-size:.67rem; }.about-foundation-grid { grid-template-columns:1fr; gap:1rem; }.about-foundation-card { padding:1.5rem; }.about-foundation-card p { font-size:.86rem; }
+ .about-values,.about-team { padding:3.5rem 0; }.about-values-grid,.about-team-grid { grid-template-columns:1fr; gap:.8rem; }.about-value-card { min-height:0; padding:1.25rem; }.about-value-card p { max-width:290px; }.about-team-grid { max-width:420px; }.team-photo { height:320px; }.about-disclaimer { padding:2.6rem 0; }.disclaimer-card { grid-template-columns:1fr; padding:1.25rem; }
+ .about-bottom-cta { padding:3.5rem 0 4rem; }.about-bottom-cta h2 { font-size:2.25rem; }.about-footer-banner { align-items:flex-start; flex-direction:column; }.about-page .footer-grid { grid-template-columns:1fr 1fr; gap:1.7rem 1rem; }.about-page .footer-col--first { grid-column:1/-1; }
+}
+@media(prefers-reduced-motion:reduce) { .about-page *, .about-page *::before, .about-page *::after { scroll-behavior:auto!important; transition-duration:.01ms!important; animation-duration:.01ms!important; } }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="about-page">
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <span class="top-bar-badge">DHOLERA · GUJARAT</span>
+      <p>Thoughtful places. Lasting value.</p>
+      <a href="index.html#cta-banner" class="top-bar-link">Talk to our team &rarr;</a>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Aurelia Landmark home"><img src="images/logo.png" alt="Aurelia Landmark" class="brand-emblem" /></a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html#home" class="nav-link">Home</a><a href="about.html" class="nav-link active" aria-current="page">About</a>
+        <a href="index.html#offerings" class="nav-link">Offerings</a><a href="index.html#why-invest" class="nav-link">Why Invest</a>
+        <a href="index.html#townships" class="nav-link">Townships</a><a href="index.html#walkthrough" class="nav-link">3D Tour</a>
+        <a href="index.html#insights" class="nav-link">Insights</a><a href="index.html#testimonials" class="nav-link">Investors</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="index.html#cta-banner" class="btn btn-primary btn-sm about-header-cta">Book Site Visit</a>
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-drawer" id="mobileDrawer"><div class="mobile-drawer-links">
+      <a href="index.html#home" class="mobile-link">Home</a><a href="about.html" class="mobile-link">About Us</a>
+      <a href="index.html#offerings" class="mobile-link">Property Offerings</a><a href="index.html#why-invest" class="mobile-link">Why Invest</a>
+      <a href="index.html#townships" class="mobile-link">Featured Townships</a><a href="index.html#walkthrough" class="mobile-link">3D Walkthrough</a>
+      <a href="index.html#insights" class="mobile-link">Market Insights</a><a href="index.html#testimonials" class="mobile-link">Investor Stories</a>
+    </div><div class="mobile-drawer-footer"><a href="index.html#cta-banner" class="btn btn-primary btn-block">Schedule a Site Visit</a></div></div>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <div class="about-hero-shade"></div>
+      <div class="container about-hero-content reveal">
+        <span class="about-kicker"><i class="fa-solid fa-sparkles"></i> A PLACE TO BUILD WHAT'S NEXT</span>
+        <h1>About <span>Aurelia Landmark</span></h1>
+        <div class="about-rule"></div>
+        <p>Thoughtful real estate development rooted in Dholera's promise and shaped around the people who invest in its future.</p>
+        <div class="about-hero-actions"><a href="index.html#cta-banner" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Talk to our team</a><a href="index.html#townships" class="btn btn-glass btn-lg"><i class="fa-solid fa-building"></i> Explore our projects</a></div>
+      </div>
+    </section>
+
+    <section class="about-story section section-light">
+      <div class="container about-story-grid">
+        <div class="about-story-visual reveal">
+          <img src="images/about-landmark.jpg" alt="Aurelia Landmark development, Dholera" />
+          <span class="story-visual-badge"><i class="fa-solid fa-shield-halved"></i> Built on trust</span>
+          <div class="story-image-caption"><span>OUR JOURNEY</span><strong>Creating a landmark for tomorrow</strong></div>
+        </div>
+        <div class="about-story-copy reveal">
+          <span class="section-eyebrow"><i class="fa-solid fa-building"></i> OUR STORY</span>
+          <h2 class="section-title">A trusted partner in <span class="accent-text-dark">Dholera</span></h2><div class="about-rule"></div>
+          <p class="section-body">Aurelia Landmark is focused on real estate opportunities in Dholera and the surrounding growth corridor. We bring together local insight, considered project planning, and a people-first approach to help buyers make informed property decisions.</p>
+          <p class="section-body">From the first conversation through the site visit and documentation process, our aim is to make each step clear, thoughtful, and personal. We believe a lasting relationship matters just as much as the place we help you find.</p>
+          <p class="section-body">As Dholera takes shape, we are committed to learning with the region and building with care—one considered opportunity at a time.</p>
+          <div class="about-offerings">
+            <article class="about-offering"><span class="about-offering-icon blue"><i class="fa-regular fa-gem"></i></span><div><h3>Considered opportunities</h3><p>Residential and investment options</p></div></article>
+            <article class="about-offering"><span class="about-offering-icon green"><i class="fa-solid fa-location-dot"></i></span><div><h3>Local perspective</h3><p>Guidance rooted in Dholera</p></div></article>
+            <article class="about-offering"><span class="about-offering-icon violet"><i class="fa-regular fa-circle-check"></i></span><div><h3>Clear conversations</h3><p>Support through each decision</p></div></article>
+            <article class="about-offering"><span class="about-offering-icon amber"><i class="fa-solid fa-handshake"></i></span><div><h3>Personal service</h3><p>People-first property guidance</p></div></article>
+          </div>
+          <div class="about-stat-row"><div><strong>2010</strong><span>Our journey began</span></div><div><strong>Dholera</strong><span>Our focus region</span></div><div><strong>One to one</strong><span>Personal guidance</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-media-section section section-dark">
+      <div class="container">
+        <div class="section-header text-center reveal"><span class="section-eyebrow eyebrow-light">A CLOSER LOOK</span><h2 class="section-title text-white">A view of <span class="accent-text">Aurelia</span></h2><p class="section-subtitle text-muted-light">A glimpse of our work and the places that inspire it.</p></div>
+        <figure class="about-media-frame reveal"><img src="images/walkthrough-preview.jpg" alt="Aurelia Landmark property preview" /><figcaption><span><i class="fa-solid fa-circle-play"></i></span><div><strong>Project preview</strong><small>Replace this image with your company video when ready.</small></div></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="about-foundation section section-dark">
+      <div class="container">
+        <div class="section-header text-center reveal"><span class="section-eyebrow eyebrow-light">OUR FOUNDATION</span><h2 class="section-title text-white">Our <span class="accent-text">Vision &amp; Mission</span></h2><p class="section-subtitle text-muted-light">The principles that guide our work and shape our commitment to clients.</p></div>
+        <div class="about-foundation-grid">
+          <article class="about-foundation-card reveal"><span class="foundation-icon"><i class="fa-regular fa-eye"></i></span><h3>Our Vision</h3><div class="about-rule"></div><p>To be a trusted name in Dholera real estate, known for thoughtful opportunities, honest guidance, and long-term relationships.</p><p>We see a future where people can approach property decisions with greater confidence and clarity.</p></article>
+          <article class="about-foundation-card reveal"><span class="foundation-icon green"><i class="fa-solid fa-bullseye"></i></span><h3>Our Mission</h3><div class="about-rule green-rule"></div><p>To connect people with carefully considered real estate opportunities and make every step—from discovery to decision—more transparent and personal.</p><p>We are committed to responsive service, clear information, and care for the communities where we work.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-values section section-light">
+      <div class="container"><div class="section-header text-center reveal"><span class="section-eyebrow">WHAT WE STAND FOR</span><h2 class="section-title">Our <span class="accent-text-dark">Core Values</span></h2><p class="section-subtitle">The principles that guide our business and relationships, every day.</p></div>
+        <div class="about-values-grid">
+          <article class="about-value-card reveal"><span class="value-icon"><i class="fa-regular fa-handshake"></i></span><span class="value-tag blue-tag">FOUNDATION</span><h3>Trust</h3><p>We build lasting relationships through care, consistency, and mutual respect.</p></article>
+          <article class="about-value-card reveal"><span class="value-icon"><i class="fa-solid fa-scale-balanced"></i></span><span class="value-tag green-tag">ETHICS</span><h3>Integrity</h3><p>We aim to communicate clearly and act responsibly in every interaction.</p></article>
+          <article class="about-value-card reveal"><span class="value-icon"><i class="fa-regular fa-gem"></i></span><span class="value-tag violet-tag">QUALITY</span><h3>Excellence</h3><p>We pay attention to the details that make service and places feel considered.</p></article>
+          <article class="about-value-card reveal"><span class="value-icon"><i class="fa-solid fa-user-check"></i></span><span class="value-tag amber-tag">PRIORITY</span><h3>Client focus</h3><p>We listen first and keep our clients' needs at the heart of each decision.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-team section section-tinted">
+      <div class="container"><div class="section-header text-center reveal"><span class="section-eyebrow">THE PEOPLE BEHIND THE WORK</span><h2 class="section-title">Our <span class="accent-text-dark">Team</span></h2><p class="section-subtitle">A dedicated team, here to make your property journey more personal.</p></div>
+        <div class="about-team-grid">
+          <article class="about-team-card reveal"><div class="team-photo team-photo-one"><i class="fa-solid fa-user-tie"></i><span>PROFILE PHOTO</span></div><div class="team-card-copy"><span>LEADERSHIP</span><h3>Founder / Director</h3><p>Add the founder's name and biography here.</p></div></article>
+          <article class="about-team-card reveal"><div class="team-photo team-photo-two"><i class="fa-solid fa-user-tie"></i><span>PROFILE PHOTO</span></div><div class="team-card-copy"><span>CLIENT RELATIONS</span><h3>Sales &amp; Advisory</h3><p>Add a team member's name and biography here.</p></div></article>
+          <article class="about-team-card reveal"><div class="team-photo team-photo-three"><i class="fa-solid fa-user-tie"></i><span>PROFILE PHOTO</span></div><div class="team-card-copy"><span>PROJECTS</span><h3>Project Management</h3><p>Add a team member's name and biography here.</p></div></article>
+        </div>
+        <div class="section-cta-center reveal"><a href="index.html#cta-banner" class="btn btn-primary btn-lg">Meet the team <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+    </section>
+
+    <section class="about-disclaimer section section-light"><div class="container"><article class="disclaimer-card reveal"><span class="disclaimer-icon"><i class="fa-solid fa-shield-halved"></i></span><div><h2>About this page</h2><div class="about-rule"></div><p>Some company details, team profiles, and media are placeholders because verified source material was not included with the website files. Replace them with approved Aurelia Landmark information before publishing.</p><p>Property images and descriptions are illustrative. Please independently verify project, title, approval, pricing, and availability details with the company before making a purchase decision.</p></div></article></div></section>
+
+    <section class="about-bottom-cta"><div class="container text-center reveal"><span class="about-kicker"><i class="fa-solid fa-sparkles"></i> YOUR NEXT CHAPTER</span><h2>Let's find the right opportunity <span>in Dholera.</span></h2><p>Connect with our team to learn more about the region and our projects.</p><a href="index.html#cta-banner" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Get in touch</a></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container">
+    <div class="about-footer-banner"><div><strong>Thoughtful opportunities in Dholera</strong><span>Speak with our team to learn more.</span></div><a href="index.html#cta-banner" class="btn btn-primary">Contact us</a></div>
+    <div class="footer-grid"><div class="footer-col footer-col--first"><a href="index.html" class="footer-logo"><span class="brand-name">AURELIA <span>LANDMARK</span></span></a><p class="footer-desc">Real estate opportunities and personal guidance in Dholera, Gujarat.</p></div>
+      <div class="footer-col"><h4>Explore</h4><ul><li><a href="index.html#townships">Our projects</a></li><li><a href="index.html#offerings">Property offerings</a></li><li><a href="index.html#why-invest">Why Dholera</a></li><li><a href="about.html">About us</a></li></ul></div>
+      <div class="footer-col"><h4>Discover</h4><ul><li><a href="index.html#insights">Insights</a></li><li><a href="index.html#walkthrough">Project tour</a></li><li><a href="index.html#testimonials">Investor stories</a></li><li><a href="index.html#cta-banner">Book a site visit</a></li></ul></div>
+      <div class="footer-col"><h4>Get in touch</h4><ul><li>Dholera, Gujarat, India</li><li><a href="index.html#cta-banner">Contact our team</a></li><li>Phone and email details: update here</li></ul></div>
+    </div><div class="footer-bottom"><span>&copy; 2026 Aurelia Landmark. All rights reserved.</span><div class="footer-legal-links"><a href="index.html">Home</a><a href="index.html#cta-banner">Contact</a></div></div>
+  </div></footer>
+  <a href="index.html#cta-banner" class="floating-concierge about-floating-link"><i class="fa-solid fa-comments"></i><span>Talk to us</span></a>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.getElementById('siteHeader');
+  const menuButton = document.getElementById('mobileMenuBtn');
+  const drawer = document.getElementById('mobileDrawer');
+
+  const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 24);
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  if (menuButton && drawer) {
+    menuButton.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+    drawer.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open menu');
+    }));
+  }
+
+  const revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    }), { threshold: 0.1 });
+    revealItems.forEach((item) => observer.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add('visible'));
+  }
+});
+
+  </script>
+</body>
+</html>
